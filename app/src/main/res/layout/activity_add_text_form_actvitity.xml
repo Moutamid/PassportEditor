@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/Et_Name"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/addTextFormBg"
+    tools:context="com.codevis.photoimageresizer.AddTextFormActvitity">
+
+    <com.google.android.ads.nativetemplates.TemplateView
+        android:id="@+id/native_ad_temp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="10dp"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="50dp"
+        app:gnt_template_type="@layout/gnt_small_template_view"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/tvAddForm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:fontFamily="serif"
+        android:text="Fill the Form"
+        android:textColor="@color/addTextFormText"
+        android:textSize="@dimen/_15ssp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/native_ad_temp" />
+
+    <TextView
+        android:id="@+id/tvEnterName"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:text="Name of Photo"
+        android:textColor="@color/addTextFormText"
+        android:textSize="@dimen/_12ssp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvAddForm" />
+
+    <EditText
+        android:id="@+id/EtEnterName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/edit_text_bg"
+        android:ems="10"
+        android:layout_marginStart="@dimen/_5sdp"
+        android:inputType="textPersonName"
+        android:padding="@dimen/_5sdp"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="@+id/tvEnterName"
+        app:layout_constraintStart_toEndOf="@+id/tvEnterName"
+        app:layout_constraintTop_toTopOf="@+id/tvEnterName" />
+
+    <TextView
+        android:id="@+id/tvDateOfPhoto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:text="@string/date_of_photo"
+        android:textColor="@color/addTextFormText"
+        android:textSize="@dimen/_12ssp"
+        app:layout_constraintStart_toStartOf="@+id/tvEnterName"
+        app:layout_constraintTop_toBottomOf="@+id/tvEnterName" />
+
+    <EditText
+        android:id="@+id/Et_Date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/edit_text_bg"
+        android:editable="false"
+        android:ems="10"
+        android:hint="Select Date"
+        android:padding="@dimen/_5sdp"
+        android:textColorHint="@color/white"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="@+id/tvDateOfPhoto"
+        app:layout_constraintStart_toStartOf="@+id/EtEnterName"
+        app:layout_constraintTop_toTopOf="@+id/tvDateOfPhoto" />
+
+    <TextView
+        android:id="@+id/tvSelectPhoto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:text="Photo"
+        android:textColor="@color/addTextFormText"
+        android:textSize="@dimen/_12ssp"
+        app:layout_constraintStart_toStartOf="@+id/tvDateOfPhoto"
+        app:layout_constraintTop_toBottomOf="@+id/tvDateOfPhoto" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/LinearPhoto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/edit_text_bg"
+        android:editable="false"
+        android:ems="10"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:padding="@dimen/_5sdp"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="@+id/tvSelectPhoto"
+        app:layout_constraintStart_toStartOf="@+id/Et_Date"
+        app:layout_constraintTop_toTopOf="@+id/tvSelectPhoto" >
+
+        <TextView
+            android:id="@+id/btnImage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/addTextFormBg"
+            android:text="@string/select_photo"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/no_file_chosen"
+            android:textColor="@color/white"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:textSize="@dimen/_10ssp"
+            app:layout_constraintBottom_toBottomOf="@+id/btnImage"
+            app:layout_constraintStart_toEndOf="@+id/btnImage"
+            app:layout_constraintTop_toTopOf="@+id/btnImage" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <com.google.android.gms.ads.AdView
+        xmlns:ads="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/adView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        ads:adSize="BANNER"
+        android:visibility="invisible"
+        android:layout_marginBottom="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        ads:layout_constraintTop_toTopOf="parent"
+        ads:layout_constraintLeft_toLeftOf="parent"
+        ads:layout_constraintRight_toRightOf="parent"
+        ads:layout_constraintBottom_toBottomOf="parent"
+        ads:adUnitId="@string/admob_banner_id">
+    </com.google.android.gms.ads.AdView>
+
+    <ImageView
+        xmlns:ads="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/placeholder"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ads"
+        android:visibility="gone"
+        ads:layout_constraintTop_toTopOf="parent"
+        ads:layout_constraintLeft_toLeftOf="parent"
+        ads:layout_constraintRight_toRightOf="parent"
+        ads:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_alignParentBottom="true"/>
+
+
+    <Button
+        android:id="@+id/btnGeneratePhoto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/addTextFormText"
+        android:text="Preview"
+        android:layout_marginBottom="@dimen/_30sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="*"
+        android:textColor="@color/default_red"
+        app:layout_constraintBottom_toBottomOf="@+id/tvSelectPhoto"
+        app:layout_constraintStart_toEndOf="@+id/tvSelectPhoto"
+        app:layout_constraintTop_toTopOf="@+id/tvSelectPhoto"
+        app:layout_constraintVertical_bias="0.263" />
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="(only jpg file)"
+        android:textColor="@color/default_red"
+        android:fontFamily="serif"
+        app:layout_constraintStart_toStartOf="@+id/tvSelectPhoto"
+        app:layout_constraintTop_toBottomOf="@+id/tvSelectPhoto" />
+</androidx.constraintlayout.widget.ConstraintLayout>

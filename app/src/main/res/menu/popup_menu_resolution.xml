@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/document_large"
+        android:title="Document - Large (768 x 1024)" />
+
+    <item
+        android:id="@+id/document_small"
+        android:title="Document - Small (600 x 800)" />
+
+    <item
+        android:id="@+id/web_large"
+        android:title="Web - Large (480 x 640)" />
+
+    <item
+        android:id="@+id/web_small"
+        android:title="Web - Small (336 x 448)" />
+
+    <item
+        android:id="@+id/email_large"
+        android:title="E-mail - Large (235 x 314)" />
+
+    <item
+        android:id="@+id/email_small"
+        android:title="E-mail - Small (160 x 160)" />
+
+</menu>

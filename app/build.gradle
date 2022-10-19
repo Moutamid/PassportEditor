@@ -1,0 +1,157 @@
+plugins {
+    id 'com.android.application'
+}
+android {
+    compileSdk 32
+
+    configurations.all {
+        resolutionStrategy {
+            force "com.google.android.gms:play-services-basement:17.0.0"
+            force "com.google.android.gms:play-services-base:17.1.0"
+            force "com.google.android.gms:play-services-stats:17.0.0"
+            force "com.google.android.gms:play-services-gcm:17.0.0"
+            force "com.google.android.gms:play-services-ads:19.7.0"
+        }
+    }
+
+    defaultConfig {
+        applicationId "com.codevis.photoimageresizer"
+        minSdk 21
+        targetSdk 32
+        versionCode 3
+        versionName "1.0"
+        setProperty("archivesBaseName", "App-$versionName")
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    /*def versionPropsFile = file('version.properties')
+    def value = 0
+    Properties versionProps = new Properties()
+    if (!versionPropsFile.exists()) {
+        versionProps['VERSION_PATCH'] = "1"
+        versionProps['VERSION_NUMBER'] = "1"
+        versionProps['VERSION_BUILD'] = "1"
+        versionProps.store(versionPropsFile.newWriter(), null)
+    }
+
+    def runTasks = gradle.startParameter.taskNames
+    if ('assembleRelease' in runTasks) {
+        value = 1
+    }
+
+    def mVersionName = ""
+    def mFileName = ""
+
+    if (versionPropsFile.canRead()) {
+        versionProps.load(new FileInputStream(versionPropsFile))
+
+        versionProps['VERSION_PATCH'] = (versionProps['VERSION_PATCH'].toInteger() + 1).toString()
+        versionProps['VERSION_NUMBER'] = (versionProps['VERSION_NUMBER'].toInteger() + 1).toString()
+        versionProps['VERSION_BUILD'] = (versionProps['VERSION_BUILD'].toInteger() + 1).toString()
+
+        versionProps.store(versionPropsFile.newWriter(), null)
+
+        // 1: change major and minor version here
+        mVersionName = "v1.0.${versionProps['VERSION_PATCH']}"
+        // TODO 2: CHANGE APP-NAME
+        mFileName = "Passport Editor-${mVersionName}.apk"
+
+        defaultConfig {
+            minSdk 21
+            targetSdk 31
+            applicationId "com.moutamid.passporteditor" // 3: change to your package name
+            versionCode versionProps['VERSION_NUMBER'].toInteger()
+            versionName "${mVersionName} Build: ${versionProps['VERSION_BUILD']}"
+            multiDexEnabled true
+            // TODO 3: CHANGE APP-NAME
+            setProperty("archivesBaseName", "Passport Editor-${mVersionName}")
+            testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        }
+
+    } else {
+        throw new FileNotFoundException("Could not read version.properties!")
+    }
+
+    if ('assembleRelease' in runTasks) {
+        applicationVariants.all { variant ->
+            variant.outputs.all { output ->
+                if (output.outputFile != null && output.outputFile.name.endsWith('.apk')) {
+                    outputFileName = mFileName
+                }
+            }
+        }
+    }*/
+
+    buildTypes {
+        release {
+            minifyEnabled false
+//            shrinkResources true
+//            resConfigs "en"
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    buildFeatures {
+        viewBinding true
+    }
+}
+
+dependencies {
+
+    implementation 'androidx.appcompat:appcompat:1.5.1'
+    implementation 'com.google.android.material:material:1.6.1'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+
+//    implementation 'com.github.CanHub:Android-Image-Cropper:4.3.2'
+
+//    implementation 'com.isseiaoki:simplecropview:1.1.8'
+//    implementation fileTree(dir: 'libs', include: ['simplecropview'])
+//    implementation project(':libs:simplecropview')
+    implementation 'com.fxn769:stash:1.3.2'
+
+    //repositories {
+    //  google()
+    //  mavenCentral()
+    //}
+
+    // GLIDE LIBRARY
+//    implementation 'com.github.bumptech.glide:glide:4.12.0'
+//    annotationProcessor 'com.github.bumptech.glide:compiler:4.12.0'
+
+    implementation 'com.github.yalantis:ucrop:2.2.6'
+
+    implementation 'com.intuit.sdp:sdp-android:1.0.6'
+    implementation 'com.intuit.ssp:ssp-android:1.0.6'
+//    implementation 'id.zelory:compressor:3.0.1'
+    implementation 'com.github.nanchen2251:CompressHelper:1.0.5'
+//    implementation "com.squareup.picasso:picasso:2.5.2"
+//    implementation 'com.iceteck.silicompressorr:silicompressor:2.2.4'
+    implementation 'me.shaohui.advancedluban:library:1.3.5'
+    implementation 'com.google.android.gms:play-services-ads:21.2.0'
+    // Dexter Permission Library
+    implementation 'com.karumi:dexter:5.0.0'
+
+//    implementation 'net.webilisim.webplayer:webplayer:1.0.11'
+
+//    implementation 'com.itextpdf:itextpdf:5.5.13'
+    implementation 'com.theartofdev.edmodo:android-image-cropper:2.8.+'
+
+    implementation 'com.tom-roush:pdfbox-android:2.0.25.0'
+
+    implementation 'androidx.work:work-runtime:2.7.0-alpha05'
+
+    def lifecycle_version = "2.2.0"
+    implementation "androidx.lifecycle:lifecycle-extensions:$lifecycle_version"
+    implementation "androidx.lifecycle:lifecycle-runtime:$lifecycle_version"
+    annotationProcessor "androidx.lifecycle:lifecycle-compiler:$lifecycle_version"
+
+    implementation project(':nativetemplates')
+    implementation 'com.lazygeniouz:aoa_manager:2.5.6'
+}

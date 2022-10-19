@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/pdfBg"
+    tools:context="com.codevis.photoimageresizer.FileNameActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:orientation="vertical">
+
+        <com.google.android.gms.ads.AdView
+            xmlns:ads="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/adView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            ads:adSize="LARGE_BANNER"
+            android:visibility="visible"
+            android:layout_marginTop="20dp"
+            ads:adUnitId="@string/admob_banner_id">
+        </com.google.android.gms.ads.AdView>
+        <ImageView
+            xmlns:ads="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/placeholder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ads"
+            android:visibility="gone"
+            android:layout_above="@+id/path"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_alignParentBottom="true"/>
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginTop="20dp"
+            app:srcCompat="@drawable/ic_pdf_svgrepo_com" />
+
+        <TextView
+            android:id="@+id/tvFileName"
+            android:layout_marginTop="30dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="File Name"
+            android:gravity="start"
+            android:textColor="@color/white" />
+
+        <TextView
+            android:id="@+id/tv_file_size"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="File Size"
+            android:gravity="start"
+            android:textStyle="bold"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/white" />
+
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/compressSwitch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            app:thumbTint="@color/red"
+            app:trackTint="@color/white"
+            android:checked="true"
+            android:text="Compress Switch"
+            android:textColor="@color/white" />
+
+        <SeekBar
+            android:id="@+id/seekBar2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:max="100"
+            android:scaleY="2"
+            android:layout_marginTop="20dp"
+            android:thumbTint="@color/white"
+            android:progress="100"
+            android:progressBackgroundTint="@color/darkerGrey"
+            android:progressTint="@color/default_red" />
+
+        <TextView
+            android:id="@+id/compressValue"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Quality: 100%"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/white" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:id="@+id/ads"
+        android:layout_above="@id/convertBtn">
+
+
+
+    </LinearLayout>
+
+
+    <Button
+        android:id="@+id/convertBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
+        android:backgroundTint="@color/default_red"
+        android:text="Convert to Pdf"
+        android:textColor="@color/white" />
+
+</RelativeLayout>

@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">Name on photo &amp; Image Resizer</string>
+    <!--    <string name="app_name">Name on photo online editor</string>-->
+    <string name="click_to_set_text">Click to set Text</string>
+    <string name="admob_app_id">ca-app-pub-5235060608610792~1382375290</string>
+<!--    <string name="admob_app_id">ca-app-pub-3940256099942544~3347511713</string>-->
+    <string name="admob_interstitial_id">ca-app-pub-5235060608610792/6032066749</string>
+<!--    <string name="admob_interstitial_id">ca-app-pub-3940256099942544/1033173712</string>-->
+    <string name="admob_banner_id">ca-app-pub-5235060608610792/5293700146</string>
+<!--    <string name="admob_banner_id">ca-app-pub-3940256099942544/6300978111</string>-->
+    <string name="admob_open_id">ca-app-pub-5235060608610792/6618976833</string>
+<!--    <string name="admob_open_id">ca-app-pub-3940256099942544/3419835294</string>-->
+    <string name="admob_native_id">"ca-app-pub-5235060608610792/6427405140"</string>
+<!--    <string name="admob_native_id">"ca-app-pub-3940256099942544/2247696110"</string>-->
+    <string name="admob_rewarded_interstitial">ca-app-pub-5235060608610792/9778214958</string>
+    <string-array name="orientation">
+        <item>Default</item>
+        <item>90 degree left</item>
+        <item>90 degree right</item>
+
+
+    </string-array>
+    <string name="select_some_images_first_on_the_add_button_below">Select some images first on the add button below</string>
+    <string name="date_of_photo">Date of Photo</string>
+    <string name="generate_new_photo">Generate New Photo</string>
+    <string name="select_photo">Select Photo</string>
+    <string name="no_file_chosen">No file Chosen</string>
+    <string name="file_size">File Size:</string>
+    <string name="set_quality">Set Quality</string>
+</resources>
